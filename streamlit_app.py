@@ -33,13 +33,13 @@ def get_fruityvice_data(this_fruit_choice):
     
  #New section to display fruitvice results-
 streamlit.header("Fruityvice Fruit Advice!")
-      try:
-            fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
-            if not fruit_choice:
-                  streamlit.error("Please select a fruit to get information")
+try:
+      fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+      if not fruit_choice:
+            streamlit.error("Please select a fruit to get information")
       else:
-    back_from_function = get_fruityvice_data(fruit_choice)
-    streamlit.dataframe(fruityvice_normalized)
+            back_from_function = get_fruityvice_data(fruit_choice)
+            streamlit.dataframe(fruityvice_normalized)
 
 except URLError as e:
   streamlit.error()
